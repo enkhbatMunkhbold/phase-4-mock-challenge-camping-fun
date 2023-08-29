@@ -26,7 +26,7 @@ function NewCamper({ onAddCamper }) {
           onAddCamper(camper);
         });
       } else {
-        r.json().then((err) => setErrors(err.errors));
+        r.json().then((err) => setErrors(Object.entries(err.errors).flat()));
       }
     });
   }
